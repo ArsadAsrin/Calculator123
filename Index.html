@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>assignment</title>
+
+</head>
+
+<body>
+
+  <div>
+
+    <h1>Sum of Numbers in Range</h1>
+
+    <input type="number" id="startInput" placeholder="Enter the starting number">
+
+    <input type="number" id="endInput" placeholder="Enter the ending number">
+
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <button onclick="reset()">Reset</button>
+
+    <p id="result"></p>
+
+  </div>
+
+  <script>
+
+    function calculateSum() {
+
+      var startInput = document.getElementById('startInput');
+
+      var endInput = document.getElementById('endInput');
+
+      var result = document.getElementById('result');
+
+      var startingNumber = parseInt(startInput.value);
+
+      var endingNumber = parseInt(endInput.value);
+
+      var sum = 0;
+
+      var numbersAdded = "";
+
+      if (startingNumber && endingNumber && startingNumber <= endingNumber) {
+
+        for (var i = startingNumber; i <= endingNumber; i++) {
+
+          sum += i;
+
+          numbersAdded += i + ", ";
+
+        }
+
+    
+
+        numbersAdded = numbersAdded.slice(0, -2);
+
+        result.textContent = "Numbers added: " + numbersAdded + "\;
+
+        result.textContent += "The sum of all numbers in the range is: " + sum;
+
+      } else {
+
+        result.textContent = "Invalid input! Please enter valid numbers.";
+
+      }
+
+    }
+
+    function reset() {
+
+      var startInput = document.getElementById('startInput');
+
+      var endInput = document.getElementById('endInput');
+
+      var result = document.getElementById('result');
+
+      startInput.value = "";
+
+      endInput.value = "";
+
+      result.textContent = "";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+
